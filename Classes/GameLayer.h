@@ -2,6 +2,9 @@
 #define __GAMELAYER_H__
 
 #include "cocos2d.h"
+#include "VictorianRushHour/GameSprite.h"
+#include "VictorianRushHour/Terrain.h"
+#include "VictorianRushHour/Player.h"
 
 USING_NS_CC;
 
@@ -22,6 +25,8 @@ private:
 	int _speedIncreaseInterval;
 	float _speedIncreaseTimer;
 
+    Terrain * _terrain;
+    Player * _player;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

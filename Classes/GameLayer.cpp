@@ -50,16 +50,14 @@ bool GameLayer::init() {
 
 void GameLayer::createGameScreen() {
 
-	Sprite *quickSprite = Sprite::create("blank.png");
-	quickSprite->setTextureRect(Rect(0, 0, 100, 100));
-	quickSprite->setColor(Color3B(255, 255, 255));
+	_gameBatchNode = SpriteBatchNode::create("blank.png", 200);
+	this->addChild(_gameBatchNode, kMiddleground);
 
-	quickSprite->setPosition(Vec2(
-			_visibleSize.width * 0.5 + _origin.x,
-			_visibleSize.height * 0.5 + _origin.y
-	));
+	_terrain = Terrain::create();
+	_gameBatchNode->addChild(_terrain, kMiddleground);
 
-	this->addChild(quickSprite);
+	_player = Player::create();
+	_gameBatchNode->addChild(_player, kBackground);
 }
 
 void GameLayer::resetGame() {
