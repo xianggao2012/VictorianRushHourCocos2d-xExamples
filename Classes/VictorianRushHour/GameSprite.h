@@ -24,7 +24,7 @@ public:
 
 	CC_SYNTHESIZE(float, _height, Height);
 
-	CC_SYNTHESIZE(Point, _vector, Vector);
+	CC_SYNTHESIZE(Vec2, _vector, Vector);
 
 	GameSprite();
 	~GameSprite();
