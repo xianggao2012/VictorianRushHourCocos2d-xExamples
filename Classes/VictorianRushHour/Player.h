@@ -35,7 +35,7 @@ class Player: public GameSprite {
 public:
 	CC_SYNTHESIZE(PlayerState, _state, State);
 	CC_SYNTHESIZE(bool, _inAir, InAir);
-	CC_SYNTHESIZE(bool, _floating, Floating);
+	CC_SYNTHESIZE_READONLY(bool, _floating, Floating);
 	CC_SYNTHESIZE(bool, _jumping, Jumping);
 	CC_SYNTHESIZE(float, _maxSpeed, MaxSpeed);
 
@@ -47,6 +47,8 @@ public:
 	virtual void update(float dt);
 
 	void reset(void);
+
+	void setFloating(bool value);
 
 	inline virtual void place() {
 		this->setPositionY(_nextPosition.y);
